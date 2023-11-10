@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "LLL",
+    "LNL",
+    "LLL"
+  ],
+  "key": {
+    "L": {
+      "tag": "forge:ingots/lead"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "reallyreactors:fuel_cell_empty"
+  }
+}
