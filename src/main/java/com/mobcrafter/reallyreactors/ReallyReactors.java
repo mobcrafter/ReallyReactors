@@ -1,6 +1,9 @@
 package com.mobcrafter.reallyreactors;
 
+import com.mobcrafter.reallyreactors.item.ModCreativeModeTabs;
+import com.mobcrafter.reallyreactors.item.ModItems;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -20,6 +23,10 @@ public class ReallyReactors {
     public ReallyReactors() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -32,7 +39,10 @@ public class ReallyReactors {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.FUEL_CELL_EMPTY);
+            event.accept(ModItems.FUEL_CELL);
+        }
     }
 
     @SubscribeEvent
