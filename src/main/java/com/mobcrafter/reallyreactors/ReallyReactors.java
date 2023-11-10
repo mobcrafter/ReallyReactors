@@ -1,5 +1,6 @@
 package com.mobcrafter.reallyreactors;
 
+import com.mobcrafter.reallyreactors.block.ModBlocks;
 import com.mobcrafter.reallyreactors.item.ModCreativeModeTabs;
 import com.mobcrafter.reallyreactors.item.ModItems;
 import com.mojang.logging.LogUtils;
@@ -26,6 +27,7 @@ public class ReallyReactors {
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

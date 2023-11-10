@@ -1,6 +1,7 @@
 package com.mobcrafter.reallyreactors.item;
 
 import com.mobcrafter.reallyreactors.ReallyReactors;
+import com.mobcrafter.reallyreactors.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,6 +19,8 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModItems.FUEL_CELL.get()))
                     .title(Component.translatable("creativetab.reallyreactors_tab"))
                     .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModBlocks.REACTOR_CASING.get());
+
                         pOutput.accept(ModItems.FUEL_CELL_EMPTY.get());
                         pOutput.accept(ModItems.FUEL_CELL.get());
                     })

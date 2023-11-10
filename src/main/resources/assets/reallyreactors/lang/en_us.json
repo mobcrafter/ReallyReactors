@@ -1,6 +1,8 @@
 {
   "creativetab.reallyreactors_tab": "Really Reactors",
 
+  "block.reallyreactors.reactor_casing": "Reactor Casing",
+
   "item.reallyreactors.fuel_cell_empty": "Empty Fuel Cell",
   "item.reallyreactors.fuel_cell": "Fuel Cell"
 }
